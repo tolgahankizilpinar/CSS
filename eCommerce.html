@@ -6,7 +6,7 @@
     <title>Document</title>
     <style>
         .col{
-            width: 30%;
+            width: 22%;
             border: 1px solid;
             padding: 10px;
             border-radius: 10px;
@@ -24,27 +24,43 @@
             justify-content: center;
         }
 
-        nav{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .hamburger{
             background-color: rgb(136, 132, 132);
             color: white;
             padding: 0px 15px;
             border-radius: 10px;
             margin-bottom: 20px;
-            margin: 20px;
+            min-height: 70px;  
         }
 
-        nav ul{
+        .nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;                   
+        }
+
+        input{
+                display: none;
+        }
+
+        .mobile{
+            display: none;
+        }
+
+        .hamburger i{
+           cursor: pointer;
+        }
+
+        .nav ul{
             display: flex;
             list-style: none;
             gap: 20px;
         }
 
-        nav ul li{
+        .nav ul li{
             border: 1px solid;
             padding: 10px;
+            cursor: pointer;
         }
 
         .col h1{
@@ -59,16 +75,86 @@
             background-color: skyblue;
             border-color: skyblue;
         }
+
+        .nav li:hover{
+            background-color: white;
+            color: black;
+            font-size: 20px;
+        }
+
+        .nav h1{
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 1210px){
+            .col{
+                width: 30%;
+            }
+        }
+
+        @media screen and (max-width: 1080px){
+            .col{
+                width: 46%;
+            }
+        }
+
+        @media screen and (max-width: 884px){
+            .col{
+                width: 94%;
+            }
+
+            .nav{
+                display: none;
+            }
+
+            .mobile{
+                display: flex;
+                align-items: center;
+                font-size: 30px;
+                min-height: 75px;
+            }
+                
+            input:checked + .nav{
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: start;
+                height: 30vh;
+            }
+
+            input:checked + .nav h1{
+                display: none;
+            }
+
+            input:checked + .nav ul{
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
-    <nav>
-        <h1>My eCommerce</h1>
-        <ul>
-            <li>Sepetim</li>
-            <li>Giriş Yap</li>
-        </ul>
+    <nav class="hamburger">
+        
+        <div class="mobile">
+            <label for="menu">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+        </div>
+        <input type="checkbox" id="menu">
+
+        <nav class="nav">
+            <h1>My eCommerce</h1>
+            <ul>
+                <li>
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Sepetim</li>
+                <li>
+                    <i class="fa-solid fa-user"></i>
+                    Giriş Yap</li>
+            </ul>
+        </nav>
     </nav>
+   
 
     <div class="row">
         <div class="col">
@@ -112,7 +198,21 @@
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quae voluptas facere atque veritatis quas laborum ad porro possimus vero exercitationem maiores distinctio, dolorem a obcaecati consequatur tenetur incidunt officiis.</p>
             <button>Sepete Ekle</button>
         </div>
-    </div>
 
+        <div class="col">
+            <img src="https://cdn.cimri.io/image/1200x1200/lenovo-ideapad-slim-3-15iah8-83er000wtr-intel-core-i5-12450h-8gb-ram-512gb-ssd-freedos-15-6-inc-laptop-notebook_837158591.jpg">
+            <h1>Laptop</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quae voluptas facere atque veritatis quas laborum ad porro possimus vero exercitationem maiores distinctio, dolorem a obcaecati consequatur tenetur incidunt officiis.</p>
+            <button>Sepete Ekle</button>
+        </div>
+
+        <div class="col">
+            <img src="https://cdn.cimri.io/image/1200x1200/lenovo-ideapad-slim-3-15iah8-83er000wtr-intel-core-i5-12450h-8gb-ram-512gb-ssd-freedos-15-6-inc-laptop-notebook_837158591.jpg">
+            <h1>Laptop</h1>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Hic, quae voluptas facere atque veritatis quas laborum ad porro possimus vero exercitationem maiores distinctio, dolorem a obcaecati consequatur tenetur incidunt officiis.</p>
+            <button>Sepete Ekle</button>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/0a6fb0f684.js" crossorigin="anonymous"></script>
 </body>
 </html>  
